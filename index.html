@@ -4,226 +4,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>De Hypofyse-Experts</title>
-
+<title>Vind jouw ideale keuken</title>
 <style>
 :root {
-  --green: #286d68;
-  --dark: #194c50;
-  --light: #edf5f2;
-  --blue: #eaf1f7;
-  --text: #30454a;
-  --white: #ffffff;
+  --ink:#26332f;
+  --muted:#68756f;
+  --green:#327b68;
+  --green2:#eaf3ef;
+  --cream:#f7f6f1;
+  --line:#e2e7e2;
 }
-
-* { box-sizing: border-box; }
-
+* { box-sizing:border-box; }
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f8f7;
-  color: var(--text);
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font:16px/1.55 Arial,sans-serif;
 }
-
 header {
-  background: var(--white);
-  padding: 20px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 10px #0000000d;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--dark);
-}
-
-.logo span { color: #78a99d; }
-
-nav {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-nav button {
-  background: transparent;
-  border: none;
-  padding: 12px 14px;
-  color: var(--text);
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 7px;
-}
-
-nav button:hover,
-nav button.active {
-  background: var(--light);
-  color: var(--green);
-  font-weight: bold;
-}
-
-.hero {
-  min-height: 310px;
   background:
-    linear-gradient(90deg, #143d3bc9, #143d3b30),
-    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 50px 8%;
-  color: white;
+    linear-gradient(115deg,rgba(22,42,35,.83),rgba(22,42,35,.35)),
+    url('https://images.unsplash.com/photo-1600210482486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85') center/cover;
+  min-height:390px;
+  display:flex;
+  align-items:center;
+  color:white;
 }
-
-.hero h1 {
-  font-size: clamp(32px, 5vw, 48px);
-  margin-bottom: 10px;
+.hero {
+  width:min(1100px,92%);
+  margin:auto;
+  padding:65px 0;
 }
-
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  color:#d9e7df;
+  font-weight:bold;
+}
+h1 {
+  font:normal clamp(38px,6vw,64px)/1.08 Georgia,serif;
+  max-width:650px;
+  margin:16px 0;
+}
 .hero p {
-  font-size: 18px;
-  max-width: 500px;
-  line-height: 1.6;
+  max-width:560px;
+  font-size:18px;
 }
-
+.hero a {
+  display:inline-block;
+  margin-top:18px;
+  background:white;
+  color:var(--ink);
+  padding:13px 22px;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:bold;
+}
 main {
-  max-width: 1150px;
-  margin: 40px auto;
-  padding: 0 22px;
+  width:min(1000px,92%);
+  margin:55px auto 80px;
 }
-
-.page { display: none; }
-.page.active { display: block; }
-
-h2 {
-  color: var(--dark);
-  font-size: 27px;
-}
-
 .intro {
-  line-height: 1.7;
-  color: #65777a;
-  margin-bottom: 25px;
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 35px;
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+.intro h2,.section-title {
+  font:normal 34px Georgia,serif;
 }
-
-.card {
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 3px 15px #00000008;
-  margin-bottom: 18px;
+.intro p,.hint { color:var(--muted); }
+.wizard {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 12px 40px #26332f0c;
+  overflow:hidden;
 }
-
-.card h3 {
-  color: var(--green);
-  margin-top: 0;
+.wizard-top {
+  padding:25px 30px 18px;
+  border-bottom:1px solid var(--line);
 }
-
-.icon {
-  font-size: 27px;
-  margin-bottom: 10px;
+.step-line {
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:10px;
 }
-
-input, textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #d7e2df;
-  border-radius: 7px;
-  font: inherit;
-  margin: 8px 0 15px;
+.track {
+  height:6px;
+  background:#edf0ed;
+  border-radius:20px;
+  overflow:hidden;
 }
-
-textarea { min-height: 100px; }
-
-.action {
-  background: var(--green);
-  color: white;
-  border: none;
-  border-radius: 7px;
-  padding: 12px 20px;
-  cursor: pointer;
-  font-size: 14px;
+.bar {
+  height:100%;
+  background:var(--green);
+  width:14.285%;
+  transition:width .25s;
 }
-
-.action:hover { background: var(--dark); }
-
-.message {
-  background: var(--light);
-  border-radius: 8px;
-  padding: 13px;
-  margin: 10px 0;
+.step { display:none; padding:30px; }
+.step.active { display:block; }
+.step h2 {
+  font:normal 30px Georgia,serif;
+  margin:0 0 7px;
 }
-
-.message small {
-  color: #718782;
+.field { margin:23px 0; }
+.field label.question {
+  display:block;
+  font-weight:bold;
+  margin-bottom:11px;
 }
-
-.event {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  border-bottom: 1px solid #e7eeeb;
-  padding: 15px 0;
+.options {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:10px;
 }
-
-.date {
-  background: var(--light);
-  color: var(--green);
-  padding: 12px;
-  min-width: 65px;
-  text-align: center;
-  border-radius: 8px;
-  font-weight: bold;
+.option {
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:13px 14px;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  cursor:pointer;
+  background:white;
 }
-
-.article {
-  border-left: 4px solid #82b2a4;
-  padding: 12px 18px;
-  margin: 15px 0;
-  background: #f7faf9;
+.option:hover {
+  border-color:#9bbcaf;
+  background:#fbfdfb;
 }
-
-.article a {
-  color: var(--green);
+.option:has(input:checked) {
+  border-color:var(--green);
+  background:var(--green2);
 }
-
-.notice {
-  background: #fff5df;
-  padding: 15px;
-  border-radius: 8px;
-  color: #795b20;
-  line-height: 1.6;
-  margin-bottom: 20px;
+.option input {
+  accent-color:var(--green);
+  margin-top:4px;
 }
-
-.landscape {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
+.option span { font-size:14px; }
+input[type=text],input[type=number],textarea,select {
+  width:100%;
+  padding:12px;
+  border:1px solid #d7dfd9;
+  border-radius:6px;
+  font:inherit;
 }
-
+textarea { min-height:90px; }
+.two {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.topic-visual {
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:14px;
+  margin:18px 0 25px;
+}
+.topic-visual img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:8px;
+}
+.topic-note {
+  background:#f4f6f2;
+  border-radius:8px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.topic-note strong {
+  font:normal 21px Georgia,serif;
+  margin-bottom:7px;
+}
+.topic-note span {
+  font-size:14px;
+  color:var(--muted);
+}
+.style-tiles {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:18px 0 25px;
+}
+.style-tile {
+  position:relative;
+  min-height:145px;
+  overflow:hidden;
+  border-radius:8px;
+}
+.style-tile img {
+  width:100%;
+  height:145px;
+  object-fit:cover;
+}
+.style-tile span {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:24px 12px 10px;
+  color:white;
+  font-weight:bold;
+  background:linear-gradient(transparent,rgba(0,0,0,.68));
+}
+.nav {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 30px;
+  background:#fbfcfa;
+  border-top:1px solid var(--line);
+}
+button {
+  border:0;
+  border-radius:5px;
+  padding:12px 22px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+.primary { background:var(--green);color:white; }
+.secondary { background:#edf1ed;color:var(--ink); }
+button:disabled { opacity:.35; }
+.result { display:none;padding:30px; }
+.result h2 { font:normal 34px Georgia,serif; }
+.result-card {
+  background:var(--green2);
+  padding:20px;
+  border-radius:8px;
+  margin:18px 0;
+}
 footer {
-  text-align: center;
-  padding: 30px;
-  color: #82918e;
-  font-size: 13px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  padding:25px;
 }
-
-@media(max-width:650px) {
-  header { gap: 15px; }
-  nav button { padding: 9px; font-size: 12px; }
-  .hero { min-height: 250px; }
+@media(max-width:600px) {
+  header { min-height:350px; }
+  .step { padding:23px 18px; }
+  .wizard-top { padding:20px 18px; }
+  .nav { padding:16px 18px; }
+  .two,.topic-visual { grid-template-columns:1fr; }
+  .style-tiles { grid-template-columns:repeat(2,1fr); }
+}
+@media print {
+  header,.intro,.wizard-top,.nav,footer,.no-print { display:none!important; }
+  .result { display:block!important; }
 }
 </style>
 </head>
@@ -231,400 +262,439 @@ footer {
 <body>
 
 <header>
-  <div class="logo">De Hypofyse<span>-Experts</span></div>
-
-  <nav>
-    <button class="active" onclick="showPage('home',this)">Home</button>
-    <button onclick="showPage('team',this)">Nieuws team</button>
-    <button onclick="showPage('wereld',this)">Nieuws wereld</button>
-    <button onclick="showPage('agenda',this)">Agenda</button>
-    <button onclick="showPage('prive',this)">Privé-updates</button>
-  </nav>
+ <div class="hero">
+  <div class="eyebrow">Jouw keuken begint bij jouw leven</div>
+  <h1>Vind de keuken die bij jou past.</h1>
+  <p>
+   Een nieuwe keuken kiezen begint niet bij kastjes of kleuren,
+   maar bij hoe je kookt, leeft en samenkomt.
+  </p>
+  <a href="#vragenlijst">Start de keukenscan</a>
+ </div>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>De Hypofyse-Experts</h1>
-    <p>Samen delen we kennis, blijven we op de hoogte
-    en versterken we elkaar.</p>
-  </div>
-</section>
-
 <main>
-
-<!-- HOME -->
-
-<section id="home" class="page active">
-  <h2>Welkom bij De Hypofyse-Experts</h2>
-
-  <p class="intro">
-    Dit is de centrale plek voor alle informatie binnen ons team.
-    Hier vind je het laatste teamnieuws, wetenschappelijke
-    ontwikkelingen, afspraken en persoonlijke updates.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <div class="icon">💬</div>
-      <h3>Nieuws uit het team</h3>
-      <p>Wat speelt er binnen ons team? Deel nieuws,
-      ideeën en berichten met collega's.</p>
-      <button class="action" onclick="showPage('team')">
-        Naar teamnieuws
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔬</div>
-      <h3>Nieuws uit de wereld</h3>
-      <p>Blijf op de hoogte van nieuwe publicaties
-      en ontwikkelingen rondom de hypofyse.</p>
-      <button class="action" onclick="showPage('wereld')">
-        Bekijk publicaties
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">📅</div>
-      <h3>Agenda</h3>
-      <p>Bekijk aankomende vergaderingen,
-      bijeenkomsten en belangrijke data.</p>
-      <button class="action" onclick="showPage('agenda')">
-        Bekijk agenda
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔒</div>
-      <h3>Privé-updates</h3>
-      <p>Persoonlijke mededelingen en updates
-      voor het team.</p>
-      <button class="action" onclick="showPage('prive')">
-        Bekijk updates
-      </button>
-    </div>
-  </div>
-
-  <div class="card">
-    <img class="landscape"
-      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200"
-      alt="Nederlands landschap">
-    <h3>Samen werken, samen groeien</h3>
-    <p>Een plek om kennis te delen en elkaar
-    op de hoogte te houden.</p>
-  </div>
+<section class="intro">
+ <h2>In zeven stappen naar jouw keukenwensen</h2>
+ <p>
+  Neem rustig de tijd. Er zijn geen goede of foute antwoorden.
+  Aan het einde krijg je een overzicht van jouw wensen.
+ </p>
 </section>
 
-<!-- TEAMNIEUWS -->
+<section class="wizard" id="vragenlijst">
 
-<section id="team" class="page">
-  <h2>Nieuws uit het team</h2>
-  <p class="intro">
-    Deel berichten, stel vragen en houd contact met elkaar.
-  </p>
+<div class="wizard-top" id="progressArea">
+ <div class="step-line">
+  <span id="stepName">Stap 1</span>
+  <span id="stepCount">1 van 7</span>
+ </div>
+ <div class="track">
+  <div class="bar" id="progress"></div>
+ </div>
+</div>
 
-  <div class="card">
-    <h3>Plaats een nieuw bericht</h3>
-    <input id="teamName" placeholder="Je naam">
-    <textarea id="teamText"
-      placeholder="Wat wil je delen met het team?"></textarea>
-    <button class="action" onclick="addMessage()">
-      Bericht plaatsen
-    </button>
-  </div>
+<form id="kitchenForm">
 
-  <div class="card">
-    <h3>Berichten van het team</h3>
-    <div id="messages"></div>
-  </div>
+<!-- STAP 1 -->
+<div class="step active" data-title="Gebruik">
+
+<h2>Hoe gebruik je de keuken?</h2>
+<p class="hint">Wat doe je graag in de keuken?</p>
+
+<div class="topic-visual">
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85" alt="Moderne keuken">
+<div class="topic-note">
+<strong>Een keuken die met je meeleeft</strong>
+<span>Denk aan koken, ontbijt, samen eten en gezelligheid.</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Wat doe je graag in de keuken?</label>
+<div class="options">
+<label class="option"><input type="checkbox" name="gebruik" value="Dagelijks koken"><span>Dagelijks koken</span></label>
+<label class="option"><input type="checkbox" name="gebruik" value="Uitgebreid koken"><span>Uitgebreid koken</span></label>
+<label class="option"><input type="checkbox" name="gebruik" value="Samen koken"><span>Samen koken</span></label>
+<label class="option"><input type="checkbox" name="gebruik" value="Bakken"><span>Bakken</span></label>
+<label class="option"><input type="checkbox" name="gebruik" value="Gasten ontvangen"><span>Gasten ontvangen</span></label>
+<label class="option"><input type="checkbox" name="gebruik" value="Eten met gezin"><span>Eten met het gezin</span></label>
+<label class="option"><input type="checkbox" name="gebruik" value="Werken"><span>Werken of studeren</span></label>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Hoe vaak kook je?</label>
+<div class="options">
+<label class="option"><input type="radio" name="frequentie" value="Iedere dag"><span>Iedere dag</span></label>
+<label class="option"><input type="radio" name="frequentie" value="Meerdere keren per week"><span>Meerdere keren per week</span></label>
+<label class="option"><input type="radio" name="frequentie" value="Vooral in het weekend"><span>Vooral in het weekend</span></label>
+<label class="option"><input type="radio" name="frequentie" value="Af en toe"><span>Af en toe</span></label>
+</div>
+</div>
+</div>
+
+<!-- STAP 2 -->
+<div class="step" data-title="Gezin">
+
+<h2>Wie gebruikt de keuken?</h2>
+<p class="hint">Denk aan je huishouden van nu en de komende jaren.</p>
+
+<div class="topic-visual">
+<img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=85" alt="Gezinskeuken">
+<div class="topic-note">
+<strong>Ruimte om samen te zijn</strong>
+<span>Een keuken is ook het hart van het huis.</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Uit hoeveel personen bestaat je huishouden?</label>
+<div class="options">
+<label class="option"><input type="radio" name="huishouden" value="1 persoon"><span>1 persoon</span></label>
+<label class="option"><input type="radio" name="huishouden" value="2 personen"><span>2 personen</span></label>
+<label class="option"><input type="radio" name="huishouden" value="3–4 personen"><span>3–4 personen</span></label>
+<label class="option"><input type="radio" name="huishouden" value="5 of meer"><span>5 of meer personen</span></label>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Wie gebruikt de keuken nog meer?</label>
+<div class="options">
+<label class="option"><input type="checkbox" name="gebruikers" value="Kinderen"><span>Kinderen</span></label>
+<label class="option"><input type="checkbox" name="gebruikers" value="Meerdere koks"><span>Meerdere koks tegelijk</span></label>
+<label class="option"><input type="checkbox" name="gebruikers" value="Huisdieren"><span>Huisdieren</span></label>
+</div>
+</div>
+</div>
+
+<!-- STAP 3 -->
+<div class="step" data-title="Apparatuur">
+
+<h2>Welke apparatuur heb je nodig?</h2>
+<p class="hint">Vink aan wat je wilt in jouw nieuwe keuken.</p>
+
+<div class="topic-visual">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=85" alt="Keukenapparatuur">
+<div class="topic-note">
+<strong>Apparatuur die bij je past</strong>
+<span>Kies vooral wat je daadwerkelijk gebruikt.</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Kook- en bakapparatuur</label>
+<div class="options">
+<label class="option"><input type="checkbox" name="apparatuur" value="Inductiekookplaat"><span>Inductiekookplaat</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Gaskookplaat"><span>Gaskookplaat</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Oven"><span>Oven</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Combi-oven"><span>Combi-oven</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Stoomoven"><span>Stoomoven</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Magnetron"><span>Magnetron</span></label>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Overige apparatuur</label>
+<div class="options">
+<label class="option"><input type="checkbox" name="apparatuur" value="Koelkast"><span>Koelkast</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Vriezer"><span>Vriezer</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Vaatwasser"><span>Vaatwasser</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Wijnklimaatkast"><span>Wijnklimaatkast</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Koffiemachine"><span>Koffiemachine</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Quooker"><span>Quooker</span></label>
+<label class="option"><input type="checkbox" name="apparatuur" value="Afzuiging"><span>Afzuiging</span></label>
+</div>
+</div>
+</div>
+
+<!-- STAP 4 -->
+<div class="step" data-title="Budget">
+
+<h2>Wat is je budget?</h2>
+<p class="hint">Een budget helpt om keuzes realistisch te maken.</p>
+
+<div class="topic-visual">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Luxe keuken">
+<div class="topic-note">
+<strong>Een passend plan</strong>
+<span>Bepaal waar je wilt investeren en waar je kunt besparen.</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Welk bedrag wil je ongeveer besteden?</label>
+<div class="options">
+<label class="option"><input type="radio" name="budget" value="Tot €10.000"><span>Tot €10.000</span></label>
+<label class="option"><input type="radio" name="budget" value="€10.000 – €15.000"><span>€10.000 – €15.000</span></label>
+<label class="option"><input type="radio" name="budget" value="€15.000 – €20.000"><span>€15.000 – €20.000</span></label>
+<label class="option"><input type="radio" name="budget" value="€20.000 – €30.000"><span>€20.000 – €30.000</span></label>
+<label class="option"><input type="radio" name="budget" value="€30.000 – €40.000"><span>€30.000 – €40.000</span></label>
+<label class="option"><input type="radio" name="budget" value="Meer dan €40.000"><span>Meer dan €40.000</span></label>
+</div>
+</div>
+</div>
+
+<!-- STAP 5 -->
+<div class="step" data-title="Stijl">
+
+<h2>Welke stijl spreekt je aan?</h2>
+<p class="hint">Ontdek welke sfeer bij jou past.</p>
+
+<div class="style-tiles">
+<div class="style-tile">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Moderne keuken">
+<span>Modern</span>
+</div>
+<div class="style-tile">
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80" alt="Warme keuken">
+<span>Warm & natuurlijk</span>
+</div>
+<div class="style-tile">
+<img src="https://images.unsplash.com/photo-1600210482486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Tijdloze keuken">
+<span>Tijdloos</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Welke stijl past bij jou?</label>
+<div class="options">
+<label class="option"><input type="checkbox" name="stijl" value="Modern"><span>Modern</span></label>
+<label class="option"><input type="checkbox" name="stijl" value="Landelijk"><span>Landelijk</span></label>
+<label class="option"><input type="checkbox" name="stijl" value="Scandinavisch"><span>Scandinavisch</span></label>
+<label class="option"><input type="checkbox" name="stijl" value="Industrieel"><span>Industrieel</span></label>
+<label class="option"><input type="checkbox" name="stijl" value="Japandi"><span>Japandi</span></label>
+<label class="option"><input type="checkbox" name="stijl" value="Hotel chique"><span>Hotel chique</span></label>
+</div>
+</div>
+</div>
+
+<!-- STAP 6 -->
+<div class="step" data-title="Ruimte">
+
+<h2>Welke ruimte heb je?</h2>
+<p class="hint">De ruimte bepaalt de mogelijkheden voor de indeling.</p>
+
+<div class="topic-visual">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Open keuken">
+<div class="topic-note">
+<strong>De ruimte bepaalt de mogelijkheden</strong>
+<span>Ramen, deuren en looproutes spelen een belangrijke rol.</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Wat voor keuken heb je?</label>
+<div class="options">
+<label class="option"><input type="radio" name="ruimte" value="Open keuken"><span>Open keuken</span></label>
+<label class="option"><input type="radio" name="ruimte" value="Gesloten keuken"><span>Gesloten keuken</span></label>
+<label class="option"><input type="radio" name="ruimte" value="Nieuwbouw"><span>Nieuwbouw</span></label>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Welke indeling spreekt je aan?</label>
+<div class="options">
+<label class="option"><input type="checkbox" name="indeling" value="Rechte keuken"><span>Rechte keuken</span></label>
+<label class="option"><input type="checkbox" name="indeling" value="L-keuken"><span>L-keuken</span></label>
+<label class="option"><input type="checkbox" name="indeling" value="U-keuken"><span>U-keuken</span></label>
+<label class="option"><input type="checkbox" name="indeling" value="Kookeiland"><span>Kookeiland</span></label>
+<label class="option"><input type="checkbox" name="indeling" value="Schiereiland"><span>Schiereiland</span></label>
+</div>
+</div>
+
+<div class="two">
+<div class="field">
+<label class="question">Lengte (cm)</label>
+<input type="number" name="lengte" placeholder="Bijv. 400">
+</div>
+<div class="field">
+<label class="question">Breedte (cm)</label>
+<input type="number" name="breedte" placeholder="Bijv. 320">
+</div>
+</div>
+</div>
+
+<!-- STAP 7 -->
+<div class="step" data-title="Prioriteiten">
+
+<h2>Wat vind je het belangrijkst?</h2>
+<p class="hint">Kies maximaal drie prioriteiten.</p>
+
+<div class="topic-visual">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85" alt="Keuken met veel werkruimte">
+<div class="topic-note">
+<strong>Wat maakt jouw keuken geslaagd?</strong>
+<span>Denk aan werkruimte, bergruimte, sfeer en gemak.</span>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Selecteer maximaal drie punten</label>
+<div class="options" id="priorityOptions">
+<label class="option"><input type="checkbox" name="prioriteiten" value="Veel werkruimte"><span>Veel werkruimte</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Veel bergruimte"><span>Veel bergruimte</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Groot kookeiland"><span>Groot kookeiland</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Goede apparatuur"><span>Goede apparatuur</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Gezellige leefkeuken"><span>Gezellige leefkeuken</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Luxe uitstraling"><span>Luxe uitstraling</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Onderhoudsgemak"><span>Onderhoudsgemak</span></label>
+<label class="option"><input type="checkbox" name="prioriteiten" value="Gunstige prijs"><span>Gunstige prijs</span></label>
+</div>
+</div>
+
+<div class="field">
+<label class="question">Overige wensen</label>
+<textarea name="extra" placeholder="Beschrijf andere wensen..."></textarea>
+</div>
+</div>
+
+<div class="nav">
+<button type="button" class="secondary" id="back" disabled>Vorige</button>
+<button type="button" class="primary" id="next">Volgende stap</button>
+</div>
+
+</form>
+
+<section class="result" id="result">
+<p class="eyebrow" style="color:var(--green)">Jouw persoonlijke overzicht</p>
+<h2>Dit is jouw keukenwensenprofiel</h2>
+<p>Gebruik dit overzicht als voorbereiding op een gesprek met een keukenspecialist.</p>
+<div id="summary"></div>
+<div class="no-print">
+<button class="primary" onclick="window.print()">Print / bewaar als PDF</button>
+<button class="secondary" onclick="location.reload()">Opnieuw invullen</button>
+</div>
 </section>
 
-<!-- NIEUWS UIT DE WERELD -->
-
-<section id="wereld" class="page">
-  <h2>Nieuws uit de wereld</h2>
-
-  <p class="intro">
-    De nieuwste wetenschappelijke publicaties over de
-    hypofyse, endocrinologie en aanverwante onderwerpen.
-  </p>
-
-  <div class="card">
-    <h3>🔬 PubMed publicaties</h3>
-    <p>Hier worden recente publicaties opgehaald
-    via de openbare PubMed-database.</p>
-
-    <button class="action" onclick="loadPubMed()">
-      Nieuwe artikelen ophalen
-    </button>
-
-    <div id="pubmedResults">
-      <p>Klik op de knop om artikelen op te halen.</p>
-    </div>
-  </div>
 </section>
-
-<!-- AGENDA -->
-
-<section id="agenda" class="page">
-  <h2>Agenda</h2>
-  <p class="intro">
-    Alle belangrijke afspraken en bijeenkomsten op één plek.
-  </p>
-
-  <div class="card">
-    <h3>Nieuwe afspraak toevoegen</h3>
-    <input id="eventTitle" placeholder="Naam bijeenkomst">
-    <input id="eventDate" type="date">
-    <input id="eventTime" type="time">
-    <button class="action" onclick="addEvent()">
-      Afspraak toevoegen
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>Aankomende afspraken</h3>
-    <div id="events"></div>
-  </div>
-</section>
-
-<!-- PRIVE-UPDATES -->
-
-<section id="prive" class="page">
-  <h2>Privé-updates</h2>
-
-  <p class="intro">
-    Een plek voor persoonlijke mededelingen en
-    updates die alleen voor teamleden bedoeld zijn.
-  </p>
-
-  <div class="notice">
-    🔒 Let op: deze voorbeeldpagina is nog niet beveiligd.
-    Voor vertrouwelijke informatie is een persoonlijke
-    login en een beveiligde server noodzakelijk.
-    Plaats hier voorlopig geen patiëntgegevens of andere
-    gevoelige informatie.
-  </div>
-
-  <div class="card">
-    <h3>Persoonlijke updates</h3>
-    <div id="privateMessages">
-      <p>Er zijn nog geen updates geplaatst.</p>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer>
-  De Hypofyse-Experts | Samen delen we kennis
+Een goed keukenontwerp begint met de juiste vragen.
 </footer>
 
 <script>
+const steps = [...document.querySelectorAll('.step')];
+let current = 0;
 
-// PAGINA NAVIGATIE
+const back = document.getElementById('back');
+const next = document.getElementById('next');
+const bar = document.getElementById('progress');
 
-function showPage(page, button) {
-  document.querySelectorAll('.page').forEach(p =>
-    p.classList.remove('active')
-  );
-
-  document.getElementById(page).classList.add('active');
-
-  document.querySelectorAll('nav button').forEach(b =>
-    b.classList.remove('active')
-  );
-
-  if(button) button.classList.add('active');
-  else {
-    const btn = [...document.querySelectorAll('nav button')]
-      .find(b => b.getAttribute('onclick').includes(page));
-    if(btn) btn.classList.add('active');
-  }
-
-  window.scrollTo(0,0);
-}
-
-// TEAMBERICHTEN
-// Prototype: berichten worden lokaal in de browser bewaard.
-
-let messages = JSON.parse(localStorage.getItem('teamMessages') || '[]');
-
-function renderMessages() {
-  const area = document.getElementById('messages');
-  area.innerHTML = '';
-
-  messages.slice().reverse().forEach(m => {
-    const div = document.createElement('div');
-    div.className = 'message';
-
-    const name = document.createElement('strong');
-    name.textContent = m.name;
-
-    const date = document.createElement('small');
-    date.textContent = ' · ' + m.date;
-
-    const content = document.createElement('p');
-    content.textContent = m.text;
-
-    div.append(name, date, content);
-    area.appendChild(div);
+function showStep() {
+  steps.forEach((s,i) => {
+    s.classList.toggle('active',i===current);
   });
 
-  if(messages.length === 0) {
-    area.textContent = 'Nog geen berichten geplaatst.';
-  }
+  document.getElementById('stepName').textContent =
+    `Stap ${current+1} · ${steps[current].dataset.title}`;
+
+  document.getElementById('stepCount').textContent =
+    `${current+1} van ${steps.length}`;
+
+  bar.style.width =
+    ((current+1)/steps.length*100)+'%';
+
+  back.disabled = current===0;
+
+  next.textContent =
+    current===steps.length-1
+    ? 'Bekijk mijn keukenprofiel'
+    : 'Volgende stap';
 }
 
-function addMessage() {
-  const name = document.getElementById('teamName').value.trim();
-  const text = document.getElementById('teamText').value.trim();
-
-  if(!name || !text) {
-    alert('Vul je naam en bericht in.');
-    return;
+back.addEventListener('click',()=>{
+  if(current>0){
+    current--;
+    showStep();
   }
+});
 
-  messages.push({
-    name,
-    text,
-    date: new Date().toLocaleString('nl-NL')
-  });
+next.addEventListener('click',()=>{
+  if(current<steps.length-1){
+    current++;
+    showStep();
+  } else {
+    makeSummary();
+  }
+});
 
-  localStorage.setItem('teamMessages', JSON.stringify(messages));
+document.getElementById('priorityOptions')
+.addEventListener('change',e=>{
+  if(e.target.name==='prioriteiten'){
+    const checked =
+      [...document.querySelectorAll('[name="prioriteiten"]:checked')];
 
-  document.getElementById('teamText').value = '';
-  renderMessages();
-}
-
-renderMessages();
-
-// PUBMED ARTIKELEN
-
-async function loadPubMed() {
-  const area = document.getElementById('pubmedResults');
-  area.textContent = 'Artikelen ophalen...';
-
-  const query = encodeURIComponent(
-    '("Pituitary Gland"[Mesh] OR pituitary[Title/Abstract] OR hypophysis[Title/Abstract])'
-  );
-
-  try {
-    const searchUrl =
-      `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${query}&sort=date&retmax=10&retmode=json`;
-
-    const response = await fetch(searchUrl);
-    if(!response.ok) throw new Error('Zoeken mislukt');
-
-    const data = await response.json();
-    const ids = data.esearchresult.idlist;
-
-    if(ids.length === 0) {
-      area.textContent = 'Geen artikelen gevonden.';
-      return;
+    if(checked.length>3){
+      e.target.checked=false;
+      alert('Kies maximaal drie prioriteiten.');
     }
-
-    const detailUrl =
-      `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${ids.join(',')}&retmode=json`;
-
-    const detailResponse = await fetch(detailUrl);
-    if(!detailResponse.ok) throw new Error('Artikelen laden mislukt');
-
-    const details = await detailResponse.json();
-    area.innerHTML = '';
-
-    ids.forEach(id => {
-      const article = details.result[id];
-      const div = document.createElement('div');
-      div.className = 'article';
-
-      const title = document.createElement('strong');
-      title.textContent = article.title || 'Zonder titel';
-
-      const journal = document.createElement('p');
-      journal.textContent =
-        (article.fulljournalname || article.source || '') +
-        ' · ' + (article.pubdate || '');
-
-      const link = document.createElement('a');
-      link.href = `https://pubmed.ncbi.nlm.nih.gov/${id}/`;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = 'Bekijk artikel op PubMed →';
-
-      div.append(title, journal, link);
-      area.appendChild(div);
-    });
-
-  } catch(error) {
-    area.textContent =
-      'De artikelen konden niet worden opgehaald. Probeer het later opnieuw.';
   }
+});
+
+function values(name){
+  return [...document.querySelectorAll(
+    `[name="${name}"]:checked`
+  )].map(x=>x.value);
 }
 
-// AGENDA
-// Prototype: afspraken worden lokaal bewaard.
-
-let events = JSON.parse(localStorage.getItem('teamEvents') || '[]');
-
-function renderEvents() {
-  const area = document.getElementById('events');
-  area.innerHTML = '';
-
-  events.sort((a,b) =>
-    (a.date + a.time).localeCompare(b.date + b.time)
-  );
-
-  events.forEach(e => {
-    const div = document.createElement('div');
-    div.className = 'event';
-
-    const date = document.createElement('div');
-    date.className = 'date';
-
-    const d = new Date(e.date + 'T12:00:00');
-    date.textContent = d.toLocaleDateString('nl-NL', {
-      day:'numeric',
-      month:'short'
-    });
-
-    const info = document.createElement('div');
-    const title = document.createElement('strong');
-    title.textContent = e.title;
-
-    const time = document.createElement('p');
-    time.textContent = e.time;
-
-    info.append(title, time);
-    div.append(date, info);
-    area.appendChild(div);
-  });
-
-  if(events.length === 0) {
-    area.textContent = 'Er zijn nog geen afspraken.';
-  }
+function one(name){
+  return document.querySelector(
+    `[name="${name}"]:checked`
+  )?.value || 'Niet ingevuld';
 }
 
-function addEvent() {
-  const title = document.getElementById('eventTitle').value.trim();
-  const date = document.getElementById('eventDate').value;
-  const time = document.getElementById('eventTime').value;
-
-  if(!title || !date || !time) {
-    alert('Vul alle velden in.');
-    return;
-  }
-
-  events.push({title,date,time});
-
-  localStorage.setItem('teamEvents', JSON.stringify(events));
-
-  document.getElementById('eventTitle').value = '';
-  renderEvents();
+function safe(s){
+  return String(s).replace(/[&<>"']/g,c=>({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[c]));
 }
 
-renderEvents();
+function list(items){
+  return items.length
+    ? items.map(safe).join(', ')
+    : 'Niet ingevuld';
+}
 
+function makeSummary(){
+
+  const data = [
+    ['Gebruik',list(values('gebruik'))],
+    ['Frequentie',one('frequentie')],
+    ['Huishouden',one('huishouden')],
+    ['Gebruikers',list(values('gebruikers'))],
+    ['Apparatuur',list(values('apparatuur'))],
+    ['Budget',one('budget')],
+    ['Stijl',list(values('stijl'))],
+    ['Ruimte',one('ruimte')],
+    ['Indeling',list(values('indeling'))],
+    ['Prioriteiten',list(values('prioriteiten'))],
+    ['Overige wensen',document.querySelector('[name="extra"]').value || 'Geen opgegeven']
+  ];
+
+  document.getElementById('summary').innerHTML =
+    data.map(([h,b])=>`
+      <div class="result-card">
+        <strong>${safe(h)}</strong>
+        <p>${safe(b)}</p>
+      </div>
+    `).join('');
+
+  document.getElementById('kitchenForm').style.display='none';
+  document.getElementById('progressArea').style.display='none';
+  document.getElementById('result').style.display='block';
+
+  document.getElementById('result')
+    .scrollIntoView({behavior:'smooth'});
+}
+
+showStep();
 </script>
+
 </body>
 </html>

@@ -1,11 +1,630 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-    <title>Group 5 Exquairo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Hypofyse-Experts</title>
+
+<style>
+:root {
+  --green: #286d68;
+  --dark: #194c50;
+  --light: #edf5f2;
+  --blue: #eaf1f7;
+  --text: #30454a;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f8f7;
+  color: var(--text);
+}
+
+header {
+  background: var(--white);
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px #0000000d;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.logo span { color: #78a99d; }
+
+nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  padding: 12px 14px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 7px;
+}
+
+nav button:hover,
+nav button.active {
+  background: var(--light);
+  color: var(--green);
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 310px;
+  background:
+    linear-gradient(90deg, #143d3bc9, #143d3b30),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 50px 8%;
+  color: white;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 22px;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+h2 {
+  color: var(--dark);
+  font-size: 27px;
+}
+
+.intro {
+  line-height: 1.7;
+  color: #65777a;
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px #00000008;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+.icon {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d7e2df;
+  border-radius: 7px;
+  font: inherit;
+  margin: 8px 0 15px;
+}
+
+textarea { min-height: 100px; }
+
+.action {
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.action:hover { background: var(--dark); }
+
+.message {
+  background: var(--light);
+  border-radius: 8px;
+  padding: 13px;
+  margin: 10px 0;
+}
+
+.message small {
+  color: #718782;
+}
+
+.event {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid #e7eeeb;
+  padding: 15px 0;
+}
+
+.date {
+  background: var(--light);
+  color: var(--green);
+  padding: 12px;
+  min-width: 65px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.article {
+  border-left: 4px solid #82b2a4;
+  padding: 12px 18px;
+  margin: 15px 0;
+  background: #f7faf9;
+}
+
+.article a {
+  color: var(--green);
+}
+
+.notice {
+  background: #fff5df;
+  padding: 15px;
+  border-radius: 8px;
+  color: #795b20;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.landscape {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #82918e;
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  header { gap: 15px; }
+  nav button { padding: 9px; font-size: 12px; }
+  .hero { min-height: 250px; }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Hello, world! Here we are</h1>
+<header>
+  <div class="logo">De Hypofyse<span>-Experts</span></div>
 
+  <nav>
+    <button class="active" onclick="showPage('home',this)">Home</button>
+    <button onclick="showPage('team',this)">Nieuws team</button>
+    <button onclick="showPage('wereld',this)">Nieuws wereld</button>
+    <button onclick="showPage('agenda',this)">Agenda</button>
+    <button onclick="showPage('prive',this)">Privé-updates</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>De Hypofyse-Experts</h1>
+    <p>Samen delen we kennis, blijven we op de hoogte
+    en versterken we elkaar.</p>
+  </div>
+</section>
+
+<main>
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+  <h2>Welkom bij De Hypofyse-Experts</h2>
+
+  <p class="intro">
+    Dit is de centrale plek voor alle informatie binnen ons team.
+    Hier vind je het laatste teamnieuws, wetenschappelijke
+    ontwikkelingen, afspraken en persoonlijke updates.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">💬</div>
+      <h3>Nieuws uit het team</h3>
+      <p>Wat speelt er binnen ons team? Deel nieuws,
+      ideeën en berichten met collega's.</p>
+      <button class="action" onclick="showPage('team')">
+        Naar teamnieuws
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔬</div>
+      <h3>Nieuws uit de wereld</h3>
+      <p>Blijf op de hoogte van nieuwe publicaties
+      en ontwikkelingen rondom de hypofyse.</p>
+      <button class="action" onclick="showPage('wereld')">
+        Bekijk publicaties
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">📅</div>
+      <h3>Agenda</h3>
+      <p>Bekijk aankomende vergaderingen,
+      bijeenkomsten en belangrijke data.</p>
+      <button class="action" onclick="showPage('agenda')">
+        Bekijk agenda
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Privé-updates</h3>
+      <p>Persoonlijke mededelingen en updates
+      voor het team.</p>
+      <button class="action" onclick="showPage('prive')">
+        Bekijk updates
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="landscape"
+      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200"
+      alt="Nederlands landschap">
+    <h3>Samen werken, samen groeien</h3>
+    <p>Een plek om kennis te delen en elkaar
+    op de hoogte te houden.</p>
+  </div>
+</section>
+
+<!-- TEAMNIEUWS -->
+
+<section id="team" class="page">
+  <h2>Nieuws uit het team</h2>
+  <p class="intro">
+    Deel berichten, stel vragen en houd contact met elkaar.
+  </p>
+
+  <div class="card">
+    <h3>Plaats een nieuw bericht</h3>
+    <input id="teamName" placeholder="Je naam">
+    <textarea id="teamText"
+      placeholder="Wat wil je delen met het team?"></textarea>
+    <button class="action" onclick="addMessage()">
+      Bericht plaatsen
+    </button>
+  </div>
+
+  <div class="card">
+    <h3>Berichten van het team</h3>
+    <div id="messages"></div>
+  </div>
+</section>
+
+<!-- NIEUWS UIT DE WERELD -->
+
+<section id="wereld" class="page">
+  <h2>Nieuws uit de wereld</h2>
+
+  <p class="intro">
+    De nieuwste wetenschappelijke publicaties over de
+    hypofyse, endocrinologie en aanverwante onderwerpen.
+  </p>
+
+  <div class="card">
+    <h3>🔬 PubMed publicaties</h3>
+    <p>Hier worden recente publicaties opgehaald
+    via de openbare PubMed-database.</p>
+
+    <button class="action" onclick="loadPubMed()">
+      Nieuwe artikelen ophalen
+    </button>
+
+    <div id="pubmedResults">
+      <p>Klik op de knop om artikelen op te halen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+
+<section id="agenda" class="page">
+  <h2>Agenda</h2>
+  <p class="intro">
+    Alle belangrijke afspraken en bijeenkomsten op één plek.
+  </p>
+
+  <div class="card">
+    <h3>Nieuwe afspraak toevoegen</h3>
+    <input id="eventTitle" placeholder="Naam bijeenkomst">
+    <input id="eventDate" type="date">
+    <input id="eventTime" type="time">
+    <button class="action" onclick="addEvent()">
+      Afspraak toevoegen
+    </button>
+  </div>
+
+  <div class="card">
+    <h3>Aankomende afspraken</h3>
+    <div id="events"></div>
+  </div>
+</section>
+
+<!-- PRIVE-UPDATES -->
+
+<section id="prive" class="page">
+  <h2>Privé-updates</h2>
+
+  <p class="intro">
+    Een plek voor persoonlijke mededelingen en
+    updates die alleen voor teamleden bedoeld zijn.
+  </p>
+
+  <div class="notice">
+    🔒 Let op: deze voorbeeldpagina is nog niet beveiligd.
+    Voor vertrouwelijke informatie is een persoonlijke
+    login en een beveiligde server noodzakelijk.
+    Plaats hier voorlopig geen patiëntgegevens of andere
+    gevoelige informatie.
+  </div>
+
+  <div class="card">
+    <h3>Persoonlijke updates</h3>
+    <div id="privateMessages">
+      <p>Er zijn nog geen updates geplaatst.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  De Hypofyse-Experts | Samen delen we kennis
+</footer>
+
+<script>
+
+// PAGINA NAVIGATIE
+
+function showPage(page, button) {
+  document.querySelectorAll('.page').forEach(p =>
+    p.classList.remove('active')
+  );
+
+  document.getElementById(page).classList.add('active');
+
+  document.querySelectorAll('nav button').forEach(b =>
+    b.classList.remove('active')
+  );
+
+  if(button) button.classList.add('active');
+  else {
+    const btn = [...document.querySelectorAll('nav button')]
+      .find(b => b.getAttribute('onclick').includes(page));
+    if(btn) btn.classList.add('active');
+  }
+
+  window.scrollTo(0,0);
+}
+
+// TEAMBERICHTEN
+// Prototype: berichten worden lokaal in de browser bewaard.
+
+let messages = JSON.parse(localStorage.getItem('teamMessages') || '[]');
+
+function renderMessages() {
+  const area = document.getElementById('messages');
+  area.innerHTML = '';
+
+  messages.slice().reverse().forEach(m => {
+    const div = document.createElement('div');
+    div.className = 'message';
+
+    const name = document.createElement('strong');
+    name.textContent = m.name;
+
+    const date = document.createElement('small');
+    date.textContent = ' · ' + m.date;
+
+    const content = document.createElement('p');
+    content.textContent = m.text;
+
+    div.append(name, date, content);
+    area.appendChild(div);
+  });
+
+  if(messages.length === 0) {
+    area.textContent = 'Nog geen berichten geplaatst.';
+  }
+}
+
+function addMessage() {
+  const name = document.getElementById('teamName').value.trim();
+  const text = document.getElementById('teamText').value.trim();
+
+  if(!name || !text) {
+    alert('Vul je naam en bericht in.');
+    return;
+  }
+
+  messages.push({
+    name,
+    text,
+    date: new Date().toLocaleString('nl-NL')
+  });
+
+  localStorage.setItem('teamMessages', JSON.stringify(messages));
+
+  document.getElementById('teamText').value = '';
+  renderMessages();
+}
+
+renderMessages();
+
+// PUBMED ARTIKELEN
+
+async function loadPubMed() {
+  const area = document.getElementById('pubmedResults');
+  area.textContent = 'Artikelen ophalen...';
+
+  const query = encodeURIComponent(
+    '("Pituitary Gland"[Mesh] OR pituitary[Title/Abstract] OR hypophysis[Title/Abstract])'
+  );
+
+  try {
+    const searchUrl =
+      `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${query}&sort=date&retmax=10&retmode=json`;
+
+    const response = await fetch(searchUrl);
+    if(!response.ok) throw new Error('Zoeken mislukt');
+
+    const data = await response.json();
+    const ids = data.esearchresult.idlist;
+
+    if(ids.length === 0) {
+      area.textContent = 'Geen artikelen gevonden.';
+      return;
+    }
+
+    const detailUrl =
+      `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${ids.join(',')}&retmode=json`;
+
+    const detailResponse = await fetch(detailUrl);
+    if(!detailResponse.ok) throw new Error('Artikelen laden mislukt');
+
+    const details = await detailResponse.json();
+    area.innerHTML = '';
+
+    ids.forEach(id => {
+      const article = details.result[id];
+      const div = document.createElement('div');
+      div.className = 'article';
+
+      const title = document.createElement('strong');
+      title.textContent = article.title || 'Zonder titel';
+
+      const journal = document.createElement('p');
+      journal.textContent =
+        (article.fulljournalname || article.source || '') +
+        ' · ' + (article.pubdate || '');
+
+      const link = document.createElement('a');
+      link.href = `https://pubmed.ncbi.nlm.nih.gov/${id}/`;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Bekijk artikel op PubMed →';
+
+      div.append(title, journal, link);
+      area.appendChild(div);
+    });
+
+  } catch(error) {
+    area.textContent =
+      'De artikelen konden niet worden opgehaald. Probeer het later opnieuw.';
+  }
+}
+
+// AGENDA
+// Prototype: afspraken worden lokaal bewaard.
+
+let events = JSON.parse(localStorage.getItem('teamEvents') || '[]');
+
+function renderEvents() {
+  const area = document.getElementById('events');
+  area.innerHTML = '';
+
+  events.sort((a,b) =>
+    (a.date + a.time).localeCompare(b.date + b.time)
+  );
+
+  events.forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'event';
+
+    const date = document.createElement('div');
+    date.className = 'date';
+
+    const d = new Date(e.date + 'T12:00:00');
+    date.textContent = d.toLocaleDateString('nl-NL', {
+      day:'numeric',
+      month:'short'
+    });
+
+    const info = document.createElement('div');
+    const title = document.createElement('strong');
+    title.textContent = e.title;
+
+    const time = document.createElement('p');
+    time.textContent = e.time;
+
+    info.append(title, time);
+    div.append(date, info);
+    area.appendChild(div);
+  });
+
+  if(events.length === 0) {
+    area.textContent = 'Er zijn nog geen afspraken.';
+  }
+}
+
+function addEvent() {
+  const title = document.getElementById('eventTitle').value.trim();
+  const date = document.getElementById('eventDate').value;
+  const time = document.getElementById('eventTime').value;
+
+  if(!title || !date || !time) {
+    alert('Vul alle velden in.');
+    return;
+  }
+
+  events.push({title,date,time});
+
+  localStorage.setItem('teamEvents', JSON.stringify(events));
+
+  document.getElementById('eventTitle').value = '';
+  renderEvents();
+}
+
+renderEvents();
+
+</script>
 </body>
 </html>
